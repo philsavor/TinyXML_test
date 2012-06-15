@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 #include <string>
 
 #include "tinyxml.h"
@@ -72,11 +72,49 @@ bool ReadXmlFile(string& szFileName)
     return true;
 }
 
+//-----------------------------------------------------
+bool ReadXmlFile_unattend(string& szFileName)
+{//读取Xml文件，并遍历
+    try
+    {
+        string fullPath = "D:\\"+szFileName;
+        
+		//创建一个XML的文档对象。
+        TiXmlDocument *myDocument = new TiXmlDocument(fullPath.c_str());
+        myDocument->LoadFile();
+        //获得根元素，即Persons。
+        TiXmlElement *RootElement = myDocument->RootElement();
+        //输出根元素名称，即输出Persons。
+        cout << RootElement->Value() << endl;
+        //获得第一个Person节点。
+        TiXmlElement *FirstSettings = RootElement->FirstChildElement();
+        //获得第一个Person的name节点和age节点和ID属性。
+        TiXmlElement *Component = FirstSettings->FirstChildElement();
+        TiXmlElement *ComputerName = Component->FirstChildElement();
+		//输出第一个Person的name内容，即周星星；age内容，即；ID属性，即。
+        cout << Component->FirstChild()->Value() << endl;
+        cout << ComputerName->FirstChild()->Value() << endl;
+
+        ComputerName->FirstChild()->SetValue("asdf");
+
+		myDocument->SaveFile(fullPath.c_str());//保存到文件
+
+        cout << ComputerName->FirstChild()->Value() << endl;
+    }
+    catch (string& e)
+    {
+        return false;
+    }
+    return true;
+}
+//----------------------------------------------------------------
+
 int main()
 {
     string fileName = "unattend.xml";
-    CreateXmlFile(fileName);
-    ReadXmlFile(fileName);
+    ReadXmlFile_unattend(fileName);
+	//CreateXmlFile(fileName);
+    //ReadXmlFile(fileName);
 
 	return 0;
 }
