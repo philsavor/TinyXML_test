@@ -89,19 +89,19 @@ SOURCE=.\main.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\tinyxml\tinystr.cpp
+SOURCE=.\tinystr.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\tinyxml\tinyxml.cpp
+SOURCE=.\tinyxml.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\tinyxml\tinyxmlerror.cpp
+SOURCE=.\tinyxmlerror.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\tinyxml\tinyxmlparser.cpp
+SOURCE=.\tinyxmlparser.cpp
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -109,11 +109,11 @@ SOURCE=.\tinyxml\tinyxmlparser.cpp
 # PROP Default_Filter "h;hpp;hxx;hm;inl"
 # Begin Source File
 
-SOURCE=.\tinyxml\tinystr.h
+SOURCE=.\tinystr.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\tinyxml\tinyxml.h
+SOURCE=.\tinyxml.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"
